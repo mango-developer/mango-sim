@@ -1,0 +1,19 @@
+[package]
+name = "futures-timer"
+version = "3.0.2"
+edition = "2021"
+license = "MIT/Apache-2.0"
+
+[dependencies]
+tokio = { version = "1", features = ["time"] }
+
+# We don't use these packages for anything, but mirroring the dependencies of the
+# real futures-timer package makes [patch] work better
+gloo-timers = { version = "0.2.0", features = ["futures"], optional = true }
+send_wrapper = { version = "0.4.0", optional = true }
+
+[features]
+wasm-bindgen = [
+    "gloo-timers",
+    "send_wrapper"
+]

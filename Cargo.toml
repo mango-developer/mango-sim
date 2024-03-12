@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "msim",
+    "msim-macros",
+    "msim-tokio",
+    "mocked-crates/futures-timer",
+]
+exclude = [
+    "tokio",
+    "test-crates/jsonrpsee-test",
+]
